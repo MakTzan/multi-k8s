@@ -6,7 +6,7 @@ before_install:
   - docker build -t maktzan/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true maktzan/react_test npm test
+   - docker run -e CI=true maktzan/react-test npm test
 
 after_success:
   - docker build -t maktzan/multi-client ./client
