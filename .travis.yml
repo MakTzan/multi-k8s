@@ -13,11 +13,14 @@ after_success:
   - docker build -t maktzan/multi-nginx ./nginx
   - docker build -t maktzan/multi-server ./server
   - docker build -t maktzan/multi-worker ./worker
+
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  
   - docker push maktzan/multi-client
   - docker push maktzan/multi-nginx
   - docker push maktzan/multi-server
   - docker push maktzan/multi-worker
+
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
