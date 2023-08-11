@@ -10,7 +10,7 @@ services:
     depends_on:
       - api
       - client
-    restart: always
+    restart: "no"
     build:
       dockerfile: Dockerfile.dev
       context: ./nginx
